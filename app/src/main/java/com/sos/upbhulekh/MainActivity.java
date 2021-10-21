@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         appUpdateManager= AppUpdateManagerFactory.create(getApplicationContext());
-
+        Toast.makeText(this, "call api", Toast.LENGTH_SHORT).show();
         installStateUpdatedListener = state -> {
             if (state.installStatus() == InstallStatus.DOWNLOADED) {
                 popupSnackBarForCompleteUpdate();
